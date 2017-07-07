@@ -5,22 +5,24 @@ class Admin::CategoriesController < ApplicationController
   end
 
 
-  # def new
-  #   @category = Category.new
-  # end
+  def new
+    @category = Category.new
+  end
 
-  # def create
-  #   @category = Category.new(category_params)
+  def create
+    @category = Category.new(category_params)
 
-  #   if @category.save
-  #     redirect_to[:admin, :categories], notice 'Category created!'
-  #   else
-  #     render
-  # end
+    if @category.save
+      redirect_to [:admin, :categories]
+    else
+      render :new
+    end
+  end
 
-  # private
+  private
 
-  # def category_params(:category).permit(:name)
-  # end
+  def category_params
+    params.require(:category).permit(:name)
+  end
 
 end
