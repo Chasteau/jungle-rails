@@ -9,14 +9,13 @@
 <body>
 
   <%= render 'layouts/top_nav' %>
-  <div class = user_sessions>
+  <div class = "user_sessions">
     <span>
       <% if current_user %>
-     Singed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+        Singed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
      <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
-    <%= yield %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <% end %>
     </span>
   </div>
   <main class="container">
