@@ -133,4 +133,115 @@ cat3.products.create!({
 })
 
 
+## Reviews
+
+# create_table "reviews", force: :cascade do |t|
+#     t.integer  "product_id"
+#     t.integer  "user_id"
+#     t.string   "description"
+#     t.integer  "rating"
+#     t.datetime "created_at",  null: false
+#     t.datetime "updated_at",  null: false
+#   end
+
+
+puts "Finding Some Products"
+p1 = Product.find(1)
+p2 = Product.find(2)
+p3 = Product.find(3)
+p4 = Product.find(4)
+p5 = Product.find(5)
+
+puts "Creating fake reviews"
+
+p1.reviews.create!({
+  user_id:  'David',
+  description: Faker::Hipster.paragraph(1),
+  rating: 3
+})
+
+p1.reviews.create!({
+  user_id:  'Sharon',
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+p1.reviews.create!({
+  user_id:  'Mila',
+  description: Faker::Hipster.paragraph(1),
+  rating: 2
+})
+
+p2.reviews.create!({
+  user_id:  'David',
+  description: Faker::Hipster.paragraph(1),
+  rating: 2
+})
+
+p2.reviews.create!({
+  user_id:  'Mila',
+  description: Faker::Hipster.paragraph(1),
+  rating: 2
+})
+
+p2.reviews.create!({
+  user_id:  'Sharon',
+  description: Faker::Hipster.paragraph(1),
+  rating: 5
+})
+
+p3.reviews.create!({
+  user_id:  'Sharon',
+  description: Faker::Hipster.paragraph(1),
+  rating: 5
+})
+
+p3.reviews.create!({
+  user_id:  'David',
+  description: Faker::Hipster.paragraph(1),
+  rating: 5
+})
+
+p3.reviews.create!({
+  user_id:  'Mila',
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+p4.reviews.create!({
+  user_id:  'Mila',
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+p4.reviews.create!({
+  user_id:  'Sharon',
+  description: Faker::Hipster.paragraph(1),
+  rating: 2
+})
+
+p4.reviews.create!({
+  user_id:  'David',
+  description: Faker::Hipster.paragraph(1),
+  rating: 3
+})
+
+p5.reviews.create!({
+  user_id:  'David',
+  description: Faker::Hipster.paragraph(1),
+  rating: 3
+})
+
+p5.reviews.create!({
+  user_id:  'Sharon',
+  description: Faker::Hipster.paragraph(1),
+  rating: 3
+})
+
+p5.reviews.create!({
+  user_id:  'Milo',
+  description: Faker::Hipster.paragraph(1),
+  rating: 3
+})
+
 puts "DONE!"
