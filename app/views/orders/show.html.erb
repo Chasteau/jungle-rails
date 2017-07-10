@@ -6,8 +6,11 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h4>Your purchase summary:</h4>
+    <%= render 'orders/line_item'%>
+    <h3>Total: $<%=@order.total_cents/100 %></h3>
+     <h3>Email Provided:<%= @order.email %></h3>
   </div>
-
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>

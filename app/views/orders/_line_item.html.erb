@@ -1,0 +1,16 @@
+<div>
+  <% counter = 0%>
+  <% @line_items.each do |item| %>
+    <h2> Item:<%= counter += 1%></h2>
+    <% @products.each do |product|%>
+      <% if product.id == item.product_id%>
+        <%= image_tag product.image.tiny %>
+        <h2> <%= product.name%></h2>
+        <h4> <%= product.description%></h4>
+      <% end %>
+    <% end %>
+    <h4>Quantity: <%= item.quantity%></h4>
+   <h4>Item Price: $<%= item.total_price_cents/100 %></h4>
+   ______________________________________________________________________________
+  <% end %>
+</div>
