@@ -1,0 +1,16 @@
+<section>
+  <h2> Product Reviews</h2>
+
+  <% if @reviews.empty? == false %>
+    <%= @reviews.each do |review|%>
+      <dl class="dl-horizontal">
+          <dt>User</dt>
+          <dd><%= review.user_id%></dd>
+          <dt>Description</dt>
+          <dd><%= review.description%></dd>
+      </dl>
+    <% end %>
+  <% else %>
+    <h4> No reviews for this product as yet</h4>
+  <% end %>
+</section>
