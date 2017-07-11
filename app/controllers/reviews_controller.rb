@@ -8,13 +8,20 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.product_id = @product_id
 
-
     if @review.save
-      redirect_to product_path(id: @product_id), notice: 'Review created created!'
+      redirect_to product_path(id: @product_id)
     else
       redirect_to product_path(id: @product_id)
     end
 
+  end
+
+  def remove_item
+    @review_id = params[:review_id]
+    @product_id = params[:product_id]
+    @review = Review.find(id: @review_id)
+    @review.destroy
+    redirect_to product_path(id: @product_id)
   end
 
   private
